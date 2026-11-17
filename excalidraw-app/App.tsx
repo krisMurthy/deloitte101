@@ -221,6 +221,7 @@ const initializeScene = async (opts: {
   const localDataState = importFromLocalStorage();
   const localAppState = localDataState?.appState ?? {
     colorTopPicks: DELOITTE_COLOR_TOP_PICKS,
+    minimapEnabled: true,
   };
 
   let scene: Omit<

@@ -42,14 +42,6 @@ const Footer = ({
           which stay visible (chrome-less). Its children opt in individually. */}
       {(defaultUIEnabled || (zoomUIEnabled && app.isNavigationEnabled())) && (
         <div className="layer-ui__wrapper__footer-left zen-mode-transition">
-          {minimapUIEnabled && appState.minimapEnabled && (
-            <Minimap
-              className={clsx("zen-mode-transition", {
-                "layer-ui__wrapper__footer-left--transition-bottom":
-                  appState.zenModeEnabled,
-              })}
-            />
-          )}
           <Stack.Col gap={2}>
             <Section heading="canvasActions">
               {(zoomUIEnabled || minimapUIEnabled) &&
@@ -85,6 +77,13 @@ const Footer = ({
             },
           )}
         >
+          {minimapUIEnabled && appState.minimapEnabled && (
+            <Minimap
+              className={clsx("zen-mode-transition", {
+                "transition-right": appState.zenModeEnabled,
+              })}
+            />
+          )}
           <div style={{ position: "relative" }}>
             {renderWelcomeScreen && <WelcomeScreenHelpHintTunnel.Out />}
             {defaultUIEnabled && (

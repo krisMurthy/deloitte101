@@ -36,11 +36,12 @@
       width: 100%;
 
       &-left {
-        // anchors the minimap
         position: relative;
       }
 
       &-right {
+        // anchors the minimap
+        position: relative;
         z-index: 100;
         display: flex;
       }

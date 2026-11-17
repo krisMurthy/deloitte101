@@ -431,7 +431,7 @@ describe("minimap", () => {
     fireEvent.pointerUp(minimap, { clientX: 80, clientY: 70 });
   });
 
-  it("keeps the compact styles panel and the pen mode button clear of it", async () => {
+  it("doesn't shorten the compact styles panel when the minimap is on the right", async () => {
     const rectangle = API.createElement({ type: "rectangle" });
     await render(
       <Excalidraw
@@ -452,9 +452,7 @@ describe("minimap", () => {
 
     API.setSelectedElements([rectangle]);
     await waitFor(() =>
-      expect(getPanel().style.maxHeight).toBe(
-        `${h.state.height - 166 - 138}px`,
-      ),
+      expect(getPanel().style.maxHeight).toBe(`${h.state.height - 166}px`),
     );
 
     act(() => {
@@ -462,7 +460,7 @@ describe("minimap", () => {
     });
     expect(document.querySelector(".ToolIcon__penMode")).not.toBe(null);
     expect(getPanel().style.maxHeight).toBe(
-      `${h.state.height - 166 - 138 - 54}px`,
+      `${h.state.height - 166}px`,
     );
   });
 

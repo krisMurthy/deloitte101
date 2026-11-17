@@ -9,7 +9,7 @@
     // (height + gap are accounted for in MINIMAP_RESERVED_HEIGHT)
     position: absolute;
     bottom: calc(100% + 12px);
-    inset-inline-start: 0;
+    inset-inline-end: 0;
     box-sizing: border-box;
     width: 200px;
     height: 140px;
